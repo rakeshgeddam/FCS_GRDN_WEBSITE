@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FocusGuardian - Stop Organizing. Start Doing.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --color-primary: #FFFFFF;
+        --color-accent: #E63946;
+        --color-dark: #0A0A0A;
+        --color-dark-muted: #1A1A1A;
+        --color-light: #F8F9FA;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--color-dark);
+        color: var(--color-primary);
+      }
+      h1, h2, h3, .font-heading {
+        font-family: 'Outfit', sans-serif;
+      }
+      .glass {
+        background: rgba(10, 10, 10, 0.8);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .glass-light {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .animate-gradient {
+        background-size: 200% 200%;
+        animation: gradientShift 10s ease infinite;
+      }
+      @keyframes gradientShift {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .perspective-mockup {
+        perspective: 1000px;
+      }
+      .mockup-tilt {
+        transform: rotateX(5deg) rotateY(-5deg) rotateZ(2deg);
+        transition: transform 0.5s ease;
+      }
+      .mockup-tilt:hover {
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brandRed: '#E63946',
+              brandBlack: '#0A0A0A',
+              brandDarkGray: '#1A1A1A',
+              brandOffWhite: '#F8F9FA',
+            }
+          }
+        }
+      }
+    </script>
+    <script type="importmap">
+    {
+      "imports": {
+        "react/": "https://esm.sh/react@^19.2.3/",
+        "react": "https://esm.sh/react@^19.2.3",
+        "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
+      }
+    }
+    </script>
+  <link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
