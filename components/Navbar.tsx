@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import appLogo from '../applogo.png';
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,11 +16,15 @@ const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <div className="flex-shrink-0 flex items-center gap-3 group cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-            <div className="relative w-10 h-10 bg-brandBlack dark:bg-white rounded-full flex items-center justify-center text-white dark:text-brandBlack text-xl shadow-lg transition-transform group-hover:scale-110">
-              🛡️
-              <div className="absolute -top-1 -right-1 w-4 h-4 bg-brandRed rounded-full border-2 border-white dark:border-brandBlack flex items-center justify-center text-[8px] text-white font-bold">1</div>
-            </div>
+          <div
+            className="flex-shrink-0 flex items-center gap-3 group cursor-pointer"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          >
+            <img
+              src={appLogo}
+              alt="FocusGuardian logo"
+              className="w-10 h-10 rounded-lg shadow-lg transition-transform group-hover:scale-110 object-contain bg-transparent"
+            />
             <span className="text-xl font-extrabold tracking-tighter uppercase font-heading text-brandBlack dark:text-white">
               Focus<span className="text-gray-400 dark:text-gray-500">Guardian</span>
             </span>
@@ -38,6 +43,7 @@ const Navbar: React.FC = () => {
             ))}
             <a
               href="#waitlist"
+              onClick={(e) => { e.preventDefault(); window.dispatchEvent(new CustomEvent('openWaitlist')); }}
               className="bg-brandBlack dark:bg-white text-white dark:text-brandBlack px-6 py-2.5 rounded-full font-bold text-sm tracking-wide uppercase hover:opacity-90 transform hover:scale-105 active:scale-95 transition-all shadow-lg"
             >
               Join the waitlist
@@ -76,7 +82,7 @@ const Navbar: React.FC = () => {
           <a
             href="#waitlist"
             className="block w-full text-center bg-brandRed text-white py-4 rounded-xl font-bold uppercase tracking-widest"
-            onClick={() => setIsMenuOpen(false)}
+            onClick={(e) => { e.preventDefault(); setIsMenuOpen(false); window.dispatchEvent(new CustomEvent('openWaitlist')); }}
           >
             Join the waitlist
           </a>

@@ -1,5 +1,6 @@
 
 import React from 'react';
+import appLogo from '../applogo.png';
 
 const Hero: React.FC = () => {
   return (
@@ -15,7 +16,11 @@ const Hero: React.FC = () => {
         <div className="mb-12 reveal">
            <div className="relative inline-block">
               <div className="w-32 h-32 md:w-48 md:h-48 rounded-[2rem] bg-white dark:bg-gradient-to-b dark:from-brandDarkGray dark:to-brandBlack border border-black/5 dark:border-white/10 shadow-2xl flex items-center justify-center mb-6 mx-auto relative group">
-                <span className="text-6xl md:text-8xl transition-transform group-hover:scale-110 duration-500">🛡️</span>
+                <img
+                  src={appLogo}
+                  alt="FocusGuardian logo"
+                  className="w-20 md:w-32 transition-transform group-hover:scale-110 duration-500 object-contain"
+                />
                 <div className="absolute -top-4 -right-4 w-10 h-10 md:w-14 md:h-14 bg-brandRed rounded-full border-4 border-white dark:border-brandBlack flex items-center justify-center text-white font-extrabold text-xl md:text-2xl shadow-lg">1</div>
               </div>
               <div className="absolute -left-12 top-0 opacity-10 dark:opacity-20 blur-xl w-32 h-32 bg-brandBlack dark:bg-white rounded-full"></div>
@@ -43,7 +48,10 @@ const Hero: React.FC = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6" id="waitlist">
-            <button className="w-full sm:w-auto px-12 py-6 bg-brandBlack dark:bg-white text-white dark:text-brandBlack rounded-2xl font-black text-lg uppercase tracking-widest hover:opacity-90 transform hover:-translate-y-1 transition-all shadow-[0_0_50px_rgba(0,0,0,0.1)] dark:shadow-[0_0_50px_rgba(255,255,255,0.1)] active:scale-95">
+            <button
+              onClick={() => window.dispatchEvent(new CustomEvent('openWaitlist'))}
+              className="w-full sm:w-auto px-12 py-6 bg-brandBlack dark:bg-white text-white dark:text-brandBlack rounded-2xl font-black text-lg uppercase tracking-widest hover:opacity-90 transform hover:-translate-y-1 transition-all shadow-[0_0_50px_rgba(0,0,0,0.1)] dark:shadow-[0_0_50px_rgba(255,255,255,0.1)] active:scale-95"
+            >
               Join the waitlist
               <div className="text-[10px] font-bold opacity-50 lowercase tracking-normal mt-1">(In Beta testing)</div>
             </button>

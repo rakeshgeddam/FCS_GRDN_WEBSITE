@@ -12,10 +12,12 @@ import FinalCTA from './components/FinalCTA';
 import Footer from './components/Footer';
 import FloatingCTA from './components/FloatingCTA';
 import CookieBanner from './components/CookieBanner';
+import WaitlistModal from './components/WaitlistModal';
 
 const App: React.FC = () => {
   const [showFloatingButton, setShowFloatingButton] = useState(false);
   const [showCookies, setShowCookies] = useState(true);
+  const [showWaitlist, setShowWaitlist] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,6 +40,12 @@ const App: React.FC = () => {
     handleScroll();
     
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const open = () => setShowWaitlist(true);
+    window.addEventListener('openWaitlist', open as EventListener);
+    return () => window.removeEventListener('openWaitlist', open as EventListener);
   }, []);
 
   return (
@@ -71,6 +79,7 @@ const App: React.FC = () => {
 
       <FloatingCTA isVisible={showFloatingButton} />
       {showCookies && <CookieBanner onAccept={() => setShowCookies(false)} />}
+      <WaitlistModal isOpen={showWaitlist} onClose={() => setShowWaitlist(false)} />
     </div>
   );
 };
