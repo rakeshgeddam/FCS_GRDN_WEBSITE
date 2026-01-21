@@ -11,31 +11,52 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
       :root {
-        --color-primary: #FFFFFF;
+        --color-primary: #0A0A0A;
+        --color-bg: #FFFFFF;
         --color-accent: #E63946;
-        --color-dark: #0A0A0A;
-        --color-dark-muted: #1A1A1A;
-        --color-light: #F8F9FA;
+        --color-muted: #F3F4F6;
+        --color-border: rgba(0, 0, 0, 0.1);
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --color-primary: #FFFFFF;
+          --color-bg: #0A0A0A;
+          --color-muted: #1A1A1A;
+          --color-border: rgba(255, 255, 255, 0.1);
+        }
       }
       body {
         font-family: 'Inter', sans-serif;
-        background-color: var(--color-dark);
+        background-color: var(--color-bg);
         color: var(--color-primary);
+        transition: background-color 0.3s ease, color 0.3s ease;
       }
       h1, h2, h3, .font-heading {
         font-family: 'Outfit', sans-serif;
       }
       .glass {
-        background: rgba(10, 10, 10, 0.8);
+        background: rgba(255, 255, 255, 0.8);
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+      }
+      @media (prefers-color-scheme: dark) {
+        .glass {
+          background: rgba(10, 10, 10, 0.8);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+        }
       }
       .glass-light {
-        background: rgba(255, 255, 255, 0.05);
+        background: rgba(0, 0, 0, 0.03);
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+      }
+      @media (prefers-color-scheme: dark) {
+        .glass-light {
+          background: rgba(255, 255, 255, 0.05);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+        }
       }
       .animate-gradient {
         background-size: 200% 200%;
@@ -55,19 +76,10 @@
         opacity: 1;
         transform: translateY(0);
       }
-      .perspective-mockup {
-        perspective: 1000px;
-      }
-      .mockup-tilt {
-        transform: rotateX(5deg) rotateY(-5deg) rotateZ(2deg);
-        transition: transform 0.5s ease;
-      }
-      .mockup-tilt:hover {
-        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
-      }
     </style>
     <script>
       tailwind.config = {
+        darkMode: 'media',
         theme: {
           extend: {
             colors: {

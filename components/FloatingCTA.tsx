@@ -14,9 +14,9 @@ const FloatingCTA: React.FC<FloatingCTAProps> = ({ isVisible }) => {
     >
       <a 
         href="#waitlist"
-        className="glass-light px-10 py-5 rounded-full shadow-2xl flex items-center gap-4 border border-white/10 font-black uppercase text-xs tracking-widest text-white hover:scale-105 active:scale-95 transition-all group"
+        className="glass px-10 py-5 rounded-full shadow-2xl flex items-center gap-4 border border-black/5 dark:border-white/10 font-black uppercase text-xs tracking-widest text-brandBlack dark:text-white hover:scale-105 active:scale-95 transition-all group"
       >
-        <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center text-brandBlack text-[10px]">🛡️</div>
+        <div className="w-6 h-6 bg-brandBlack dark:bg-white rounded-full flex items-center justify-center text-white dark:text-brandBlack text-[10px]">🛡️</div>
         Join Waitlist
         <span className="text-brandRed group-hover:translate-x-1 transition-transform">→</span>
       </a>
