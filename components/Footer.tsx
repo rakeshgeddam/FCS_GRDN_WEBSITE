@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
             <ul className="space-y-4 text-gray-500 dark:text-gray-400 font-bold text-sm">
               <li><a href="#features" className="hover:text-brandBlack dark:hover:text-white transition-colors">FEATURES</a></li>
               <li><a href="#waitlist" className="hover:text-brandBlack dark:hover:text-white transition-colors">JOIN BETA</a></li>
-              <li><a href="#" className="hover:text-brandBlack dark:hover:text-white transition-colors">PRIVACY MODEL</a></li>
+              <li><a href="/privacy" className="hover:text-brandBlack dark:hover:text-white transition-colors">PRIVACY POLICY</a></li>
             </ul>
           </div>
 
@@ -54,8 +54,8 @@ const Footer: React.FC = () => {
           </div>
           <div className="flex items-center gap-12 text-[10px] font-black uppercase tracking-widest text-gray-400">
             <a href="#" className="hover:text-brandBlack dark:hover:text-white">Status</a>
-            <a href="#" className="hover:text-brandBlack dark:hover:text-white">Beta Terms</a>
-            <a href="#" className="hover:text-brandBlack dark:hover:text-white">Privacy</a>
+            <a href="/terms" className="hover:text-brandBlack dark:hover:text-white">Terms</a>
+            <a href="/privacy" className="hover:text-brandBlack dark:hover:text-white">Privacy</a>
           </div>
         </div>
       </div>

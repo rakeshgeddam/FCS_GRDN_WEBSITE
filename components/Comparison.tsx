@@ -7,7 +7,7 @@ const Comparison: React.FC = () => {
     { name: 'iOS MapKit Integration', fg: '✅ Live', others: '❌ Manual' },
     { name: 'Focus Mode Triggers', fg: '✅ Auto', others: '❌ Manual' },
     { name: 'Privacy Focus', fg: '✅ On-device', others: '⚠️ Cloud-sync' },
-    { name: 'Price during Beta', fg: 'Free', others: '$10-$30/mo' },
+    { name: 'Price', fg: '$10.00/mo', others: '$15-$30/mo' },
   ];
 
   return (

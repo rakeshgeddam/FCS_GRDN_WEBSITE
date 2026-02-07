@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Problem from './components/Problem';
@@ -13,11 +14,11 @@ import Footer from './components/Footer';
 import FloatingCTA from './components/FloatingCTA';
 import CookieBanner from './components/CookieBanner';
 import WaitlistModal from './components/WaitlistModal';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
 
-const App: React.FC = () => {
+const HomePage: React.FC = () => {
   const [showFloatingButton, setShowFloatingButton] = useState(false);
-  const [showCookies, setShowCookies] = useState(true);
-  const [showWaitlist, setShowWaitlist] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,21 +43,13 @@ const App: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => {
-    const open = () => setShowWaitlist(true);
-    window.addEventListener('openWaitlist', open as EventListener);
-    return () => window.removeEventListener('openWaitlist', open as EventListener);
-  }, []);
-
   return (
-    <div className="relative min-h-screen bg-white dark:bg-brandBlack text-brandBlack dark:text-white overflow-x-hidden selection:bg-brandRed selection:text-white transition-colors duration-300">
+    <>
       {/* Scroll Progress Bar */}
       <div 
         className="fixed top-0 left-0 h-1 bg-brandRed z-[100] transition-all duration-150"
         id="scroll-progress"
       />
-
-      <Navbar />
       
       <main>
         <Hero />
@@ -75,12 +68,38 @@ const App: React.FC = () => {
         <FinalCTA />
       </main>
 
-      <Footer />
-
       <FloatingCTA isVisible={showFloatingButton} />
-      {showCookies && <CookieBanner onAccept={() => setShowCookies(false)} />}
-      <WaitlistModal isOpen={showWaitlist} onClose={() => setShowWaitlist(false)} />
-    </div>
+    </>
+  );
+};
+
+const App: React.FC = () => {
+  const [showCookies, setShowCookies] = useState(true);
+  const [showWaitlist, setShowWaitlist] = useState(false);
+
+  useEffect(() => {
+    const open = () => setShowWaitlist(true);
+    window.addEventListener('openWaitlist', open as EventListener);
+    return () => window.removeEventListener('openWaitlist', open as EventListener);
+  }, []);
+
+  return (
+    <BrowserRouter>
+      <div className="relative min-h-screen bg-white dark:bg-brandBlack text-brandBlack dark:text-white overflow-x-hidden selection:bg-brandRed selection:text-white transition-colors duration-300">
+        <Navbar />
+
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/terms" element={<TermsOfService />} />
+        </Routes>
+
+        <Footer />
+
+        {showCookies && <CookieBanner onAccept={() => setShowCookies(false)} />}
+        <WaitlistModal isOpen={showWaitlist} onClose={() => setShowWaitlist(false)} />
+      </div>
+    </BrowserRouter>
   );
 };
 

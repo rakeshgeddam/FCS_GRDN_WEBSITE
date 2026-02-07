@@ -15,7 +15,7 @@ const FAQItem: React.FC<{ q: string; a: string }> = ({ q, a }) => {
           +
         </span>
       </button>
-      <div 
+      <div
         className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-96 pb-8' : 'max-h-0'}`}
       >
         <p className="text-gray-600 dark:text-gray-400 leading-relaxed font-medium">{a}</p>
@@ -32,7 +32,7 @@ const FAQ: React.FC = () => {
     },
     {
       q: 'Is it really free?',
-      a: 'FocusGuardian is currently in Beta testing and is completely free for all approved testers. We will announce a pricing structure for the public release in the coming months.',
+      a: 'FocusGuardian offers a powerful free-forever tier for essential focus features. Premium access starts at $10.00/month after a 7-day free trial.',
     },
     {
       q: 'Does it sync with my work email?',
