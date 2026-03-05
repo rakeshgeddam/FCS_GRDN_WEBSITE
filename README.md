@@ -4,7 +4,7 @@
   <p><strong>Plan. Protect. Execute.</strong></p>
   <p>AI-powered iOS productivity app that helps you manage time, focus sessions, relationships, and goals — all from a unified timeline.</p>
 
-  <a href="https://apps.apple.com/app/focusguardian">
+  <a href="https://apps.apple.com/us/app/digiblinker/id6757509657">
     <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" height="50" />
   </a>
 </div>
