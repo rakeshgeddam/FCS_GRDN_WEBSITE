@@ -47,14 +47,15 @@ const Hero: React.FC = () => {
             The AI calendar system that thinks ahead—so you don't miss flights, double-book meetings, or burn out on busywork.
           </p>
           
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6" id="waitlist">
-            <button
-              onClick={() => window.dispatchEvent(new CustomEvent('openWaitlist'))}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+            <a
+              href="https://apps.apple.com/us/app/digiblinker/id6757509657"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-full sm:w-auto px-12 py-6 bg-brandBlack dark:bg-white text-white dark:text-brandBlack rounded-2xl font-black text-lg uppercase tracking-widest hover:opacity-90 transform hover:-translate-y-1 transition-all shadow-[0_0_50px_rgba(0,0,0,0.1)] dark:shadow-[0_0_50px_rgba(255,255,255,0.1)] active:scale-95"
             >
-              Join the waitlist
-              <div className="text-[10px] font-bold opacity-50 lowercase tracking-normal mt-1">(In Beta testing)</div>
-            </button>
+              Download the app
+            </a>
           </div>
 
           <div className="mt-16 flex items-center justify-center gap-12 text-gray-400 dark:text-gray-500">

@@ -13,7 +13,6 @@ import FinalCTA from './components/FinalCTA';
 import Footer from './components/Footer';
 import FloatingCTA from './components/FloatingCTA';
 import CookieBanner from './components/CookieBanner';
-import WaitlistModal from './components/WaitlistModal';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 
@@ -75,14 +74,6 @@ const HomePage: React.FC = () => {
 
 const App: React.FC = () => {
   const [showCookies, setShowCookies] = useState(true);
-  const [showWaitlist, setShowWaitlist] = useState(false);
-
-  useEffect(() => {
-    const open = () => setShowWaitlist(true);
-    window.addEventListener('openWaitlist', open as EventListener);
-    return () => window.removeEventListener('openWaitlist', open as EventListener);
-  }, []);
-
   return (
     <BrowserRouter>
       <div className="relative min-h-screen bg-white dark:bg-brandBlack text-brandBlack dark:text-white overflow-x-hidden selection:bg-brandRed selection:text-white transition-colors duration-300">
@@ -97,7 +88,6 @@ const App: React.FC = () => {
         <Footer />
 
         {showCookies && <CookieBanner onAccept={() => setShowCookies(false)} />}
-        <WaitlistModal isOpen={showWaitlist} onClose={() => setShowWaitlist(false)} />
       </div>
     </BrowserRouter>
   );

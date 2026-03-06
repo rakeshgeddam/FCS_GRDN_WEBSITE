@@ -42,11 +42,12 @@ const Navbar: React.FC = () => {
               </a>
             ))}
             <a
-              href="#waitlist"
-              onClick={(e) => { e.preventDefault(); window.dispatchEvent(new CustomEvent('openWaitlist')); }}
+              href="https://apps.apple.com/us/app/digiblinker/id6757509657"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-brandBlack dark:bg-white text-white dark:text-brandBlack px-6 py-2.5 rounded-full font-bold text-sm tracking-wide uppercase hover:opacity-90 transform hover:scale-105 active:scale-95 transition-all shadow-lg"
             >
-              Join the waitlist
+              Download the app
             </a>
           </div>
 
@@ -80,11 +81,13 @@ const Navbar: React.FC = () => {
             </a>
           ))}
           <a
-            href="#waitlist"
+            href="https://apps.apple.com/us/app/digiblinker/id6757509657"
+            target="_blank"
+            rel="noopener noreferrer"
             className="block w-full text-center bg-brandRed text-white py-4 rounded-xl font-bold uppercase tracking-widest"
-            onClick={(e) => { e.preventDefault(); setIsMenuOpen(false); window.dispatchEvent(new CustomEvent('openWaitlist')); }}
+            onClick={() => setIsMenuOpen(false)}
           >
-            Join the waitlist
+            Download the app
           </a>
         </div>
       </div>
