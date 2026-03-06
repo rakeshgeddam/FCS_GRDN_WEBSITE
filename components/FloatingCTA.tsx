@@ -12,12 +12,14 @@ const FloatingCTA: React.FC<FloatingCTAProps> = ({ isVisible }) => {
         isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
       }`}
     >
-      <a 
-        href="#waitlist"
+      <a
+        href="https://apps.apple.com/us/app/digiblinker/id6757509657"
+        target="_blank"
+        rel="noopener noreferrer"
         className="glass px-10 py-5 rounded-full shadow-2xl flex items-center gap-4 border border-black/5 dark:border-white/10 font-black uppercase text-xs tracking-widest text-brandBlack dark:text-white hover:scale-105 active:scale-95 transition-all group"
       >
         <div className="w-6 h-6 bg-brandBlack dark:bg-white rounded-full flex items-center justify-center text-white dark:text-brandBlack text-[10px]">🛡️</div>
-        Join Waitlist
+        Download the app
         <span className="text-brandRed group-hover:translate-x-1 transition-transform">→</span>
       </a>
     </div>

@@ -18,10 +18,14 @@ const FinalCTA: React.FC = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-16">
-              <button className="w-full sm:w-auto px-16 py-8 bg-white dark:bg-brandBlack text-brandBlack dark:text-white rounded-[2rem] font-black text-xl uppercase tracking-widest hover:scale-105 active:scale-95 transition-all shadow-2xl group">
-                Join the waitlist
-                <div className="text-xs font-bold opacity-40 lowercase tracking-normal mt-1">(In Beta testing)</div>
-              </button>
+              <a
+                href="https://apps.apple.com/us/app/digiblinker/id6757509657"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto px-16 py-8 bg-white dark:bg-brandBlack text-brandBlack dark:text-white rounded-[2rem] font-black text-xl uppercase tracking-widest hover:scale-105 active:scale-95 transition-all shadow-2xl group"
+              >
+                Download the app
+              </a>
             </div>
 
             {/* Badges */}

@@ -41,8 +41,13 @@ const Features: React.FC = () => {
               Elite productivity features, simplified for the everyday high-achiever.
             </p>
           </div>
-          <a href="#waitlist" className="bg-white text-brandBlack px-10 py-5 rounded-2xl font-black uppercase tracking-widest hover:bg-gray-200 transition-all">
-            Join Beta
+          <a
+            href="https://apps.apple.com/us/app/digiblinker/id6757509657"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-white text-brandBlack px-10 py-5 rounded-2xl font-black uppercase tracking-widest hover:bg-gray-200 transition-all"
+          >
+            Download the app
           </a>
         </div>
 

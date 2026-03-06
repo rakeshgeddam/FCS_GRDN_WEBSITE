@@ -25,7 +25,7 @@ const Footer: React.FC = () => {
             <h4 className="text-xs font-black uppercase tracking-[0.3em] text-brandRed mb-8">System</h4>
             <ul className="space-y-4 text-gray-500 dark:text-gray-400 font-bold text-sm">
               <li><a href="#features" className="hover:text-brandBlack dark:hover:text-white transition-colors">FEATURES</a></li>
-              <li><a href="#waitlist" className="hover:text-brandBlack dark:hover:text-white transition-colors">JOIN BETA</a></li>
+              <li><a href="https://apps.apple.com/us/app/digiblinker/id6757509657" target="_blank" rel="noopener noreferrer" className="hover:text-brandBlack dark:hover:text-white transition-colors">DOWNLOAD THE APP</a></li>
               <li><a href="/privacy" className="hover:text-brandBlack dark:hover:text-white transition-colors">PRIVACY POLICY</a></li>
             </ul>
           </div>
